@@ -43,7 +43,7 @@ function($http){
                 ['color', ['color']],
                 ['para', ['ul', 'ol', 'paragraph']],
                 ['height', ['height']],
-                ['Misc',['fullscreen','undo','redo']]
+                ['Misc',['fullscreen','codeview','undo','redo']]
                 //['insert', ['picture', 'link']], // no insert buttons
                 //['table', ['table']], // no table button
                 //['help', ['help']] //no help button
