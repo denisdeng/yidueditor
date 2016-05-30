@@ -60,20 +60,28 @@ function($http){
                 decode: 1,
             })
             .success(function (res){
-                var content = res.data && res.data.content && res.data.content.contents;
-                if (content) {
-                    $('#editor').summernote('code', content);
-                }
+                $scope.content = res.data && res.data.content;
+                if (!$scope.content) {
+                    $scope.content = {
+                        title: '',
+                        contents: ''
+                    }
+                };
+                $('#editor').summernote('code', $scope.content.contents);
             });
         }
 
         $scope.update = function () {
             var content = $('#editor').summernote('code');
             if (content) {
-                editorService.update({
-                    id: id,
-                    content: content,
-                })
+                var con = {
+                    content_id: id,
+                    content: {
+                        title: $scope.content.title,
+                        contents: content
+                    }
+                };
+                editorService.update(con)
                 .success(function (res){
                     console.log(res);
                 });
