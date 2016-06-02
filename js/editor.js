@@ -135,7 +135,7 @@ function($http){
         $scope.preview = function () {
             var preCon = $('#editor').summernote('code'),
                 patter = /(<p><br><\/p>)?/gi;
-            if($.trim(preCon) != '' && !patter.test(preCon)){
+            if($.trim(preCon) != ''){
                 $scope.isPreview = true;
                 $scope.isEmpty = false;
                 $scope.preCon = $sce.trustAsHtml(preCon);

@@ -12,10 +12,9 @@
         </div>
         <p ng-if='isEmpty' style='color: #f00'>内容为空</p>
         <div ng-show='isPreview'>
-        	<p style="text-align: right;"><a ng-click='cancel()'>编辑</a></p>
+        	<p style="text-align: right;"><a ng-click='cancel()' style='cursor: pointer;'>编辑</a></p>
         	<h3>{{content.title}}</h3>
-        	<div contenteditable="false">
-        		{{content.contents}}
+        	<div contenteditable="false" data-ng-bind-html='preCon'>
         	</div>
         </div>
     </div>
