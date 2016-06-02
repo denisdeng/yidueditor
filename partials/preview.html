@@ -1,0 +1,10 @@
+<div class="row">
+    <div class="col-md-12">
+		<h3 ng-if='title'><a ui-sref="edit({id:id})">{{title}}</a></h3>
+    	<h3 ng-if='!title'><a ui-sref="edit({id:id})">还没有标题哟，赶紧去填写标题吧！</a></h3>
+    	<div contenteditable="false" ng-if='content'>
+    		{{content}}	
+    	</div>
+    	<p ng-if="!content">暂时还没有内容，赶紧<a ui-sref="edit({id:id})">去写内容吧</a></p>
+    </div>
+</div>

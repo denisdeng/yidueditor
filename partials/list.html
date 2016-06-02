@@ -1,0 +1,8 @@
+<div class="row">
+    <div class="col-md-12">
+    	<h3>文章列表</h3>
+    	<ul ng-repeat="(key, obj) in list">
+    		<li ng-repeat="(key, obj) in obj"><a ui-sref="edit({id:key})">{{obj}}</a></li>
+    	</ul>
+    </div>
+</div>
